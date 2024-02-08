@@ -12,22 +12,22 @@ function getRandomNumber(min, max) {
 
 button.addEventListener('click', function() {
     const predictionNumber = getRandomNumber(1, 6);
-    const randomProbability = getRandomNumber(0, 100);
+    const randomProbability = getRandomNumber(0, 101);
 
     if (predictionText) {
     const items = forecastItems.content.cloneNode(true);
-    const randomPrediction = items.querySelector('p');
-    randomPrediction.textContent = predictionText;
-    forecasts.append(items);
+    const predictionParagraph = items.querySelector('p');
+    predictionParagraph.textContent = predictionText;
+    forecasts.prepend(items);
     }
 
-    if (predictionNumber == 1) {
+    if (predictionNumber === 1) {
         predictionText = "Пришло время действовать!";
-      } else if (predictionNumber == 2) {
+      } else if (predictionNumber === 2) {
         predictionText = "Что ни делается - все к лучшему";
-      } else if (predictionNumber == 3) {
+      } else if (predictionNumber === 3) {
         predictionText = "Делай что пожелаешь и не жалей!"; 
-      } else if (predictionNumber == 4) {
+      } else if (predictionNumber === 4) {
         predictionText = "Ты уедешь в путешествие очень скоро";
       } else {
         predictionText = "Вскоре к вам явится кто-то неожиданный";
